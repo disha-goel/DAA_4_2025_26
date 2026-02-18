@@ -2,14 +2,14 @@ class Solution {
   public:
          bool canPaint(vector<int>& arr, int k, long long maxTime) {
         int painters = 1;
-        long long curr = 0;
+        long long current = 0;
         for (int i = 0; i < arr.size(); i++) {
-            if (curr + arr[i] > maxTime) {
+            if (current+ arr[i] > maxTime) {
                 painters++;
-                curr = arr[i];
+                current = arr[i];
                 if (painters > k) return false;
             } else {
-                curr += arr[i];
+                current += arr[i];
             }
         }
         return true;
